@@ -1,13 +1,18 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+//const methodOverride = require('method-override');
+const app = express();
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
-var app = express();
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const cancionesRoutes = require('./routes/cancionesRoutes');
+const generosRoutes = require('./routes/generosRoutes');
+//Rutas de APIs
+const generosApiRouter = require('./routes/api/generosApiRouter');
+const cancionesApiRouter = require('./routes/api/cancionesApiRouter');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -18,9 +23,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+//app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/cancionesRoutes',cancionesRoutes);
+app.use('/generosRoutes',generosRoutes);
+//Para APIs
+app.use('/api/generos', generosApiRouter);
+app.use('/api/canciones', cancionesApiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
