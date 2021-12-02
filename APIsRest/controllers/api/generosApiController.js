@@ -3,15 +3,15 @@ const db = require('../../database/models');
 module.exports = {
     list: (req,res) => {
         db.Genero.findAll()
-        include:[
-            {association:"canciones"},
-                    ]
+       // include:[
+          // {association:"canciones"},
+            //       ]
 
         .then(generos => {
             let respuesta = {
                 meta: {
                     status: 200,
-                    total: genres.length,
+                    total: generos.length,
                     url: 'api/generos'
                 },
                 data: generos
