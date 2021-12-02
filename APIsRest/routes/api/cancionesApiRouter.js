@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var cancionesApiController =  require('../controllers/api/cancionesApiController');
+var cancionesApiController =  require('../../controllers/api/cancionesApiController');
 
 router.get('/', cancionesApiController.listado);
 router.post('/', cancionesApiController.store);

@@ -1,4 +1,4 @@
-const db = require('../database/models');
+const db = require('../../database/models');
 
 module.exports = {
     list: (req,res) => {
@@ -18,7 +18,7 @@ module.exports = {
             }
 
            return res.json(respuesta)
-        })
+        }).catch(error=>res.send(error))
     }
 }
 //module.exports = generosApiController;
