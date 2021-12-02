@@ -9,3 +9,10 @@ Se creo las rutas del crud y de las Apis;
 Se creo los controllers para el crud y las Apis;
 Se actualiza el Repositorio con los ultimos cambios;
 Se coloca en el proyecto el archivo de la base de datos;
+Se soluciona problemas de conexion entre rutas y base de datos;
+El desafio cumple con los pedidos de postman referente a canciones;
+Tiene problemas para mostrar generos y sus canciones;
+Se soluciona parte del problema con los generos pero sigue sin aparecer las canciones;
+Se soluciona la muestra de los generos con sus respectivas canciones;
+Se continua con pruebas ya con la version final del desafio para testeo y encontrar alguna falencia que pudiera ocurrir;
+Se pone en practica el software Postman para un mayor conociento del mismo.
